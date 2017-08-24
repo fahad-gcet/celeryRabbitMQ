@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Generate Random Users</h2>
+    <a href="{% url 'users_list' %}">List Users</a>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{form}}
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

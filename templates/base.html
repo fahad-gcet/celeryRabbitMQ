@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django + Celery + RabbitMQ</title>
+</head>
+<body>
+{% if messages %}
+    {% for message in messages %}
+        <p style="color: green">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+{% block content %}
+{% endblock %}
+</body>
+</html>
