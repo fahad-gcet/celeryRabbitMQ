@@ -23,5 +23,10 @@ urlpatterns = [
 
 urlpatterns += [
     url(r'^$', views.UserListView.as_view(), name='users_list'),
-    url(r'^generate/$', views.GenerateRandomUsersView.as_view(), name='generate')
+    url(r'^generate/$', views.GenerateRandomUsersView.as_view(), name='generate'),
+]
+
+urlpatterns += [
+    url(r'^sendEmail/$', views.SendMailView.as_view(), name='sendEmail'),
+    url(r'^sendEmailCelery/$', views.SendMailCeleryView.as_view(), name='sendEmailCelery'),
 ]

@@ -2,7 +2,10 @@
 
 {% block content %}
     <h2>Users List</h2>
-    <a href="{% url 'generate' %}">Generate Users</a>
+    <h3>Number of Users: {{user_count}}</h3>
+    <a href="{% url 'generate' %}">Generate Users</a> <br>
+    <a href="{% url 'sendEmail' %}">Send Email</a> <br>
+    <a href="{% url 'sendEmailCelery' %}">Send Email With Celery</a>
 
     <ul>
         {% for user in object_list %}

@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import configparser
+from kombu import Queue, Exchange
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -121,4 +123,11 @@ STATIC_URL = '/static/'
 
 
 # Celery Broker (RabbitMQ) URL
-CELERY_BROKER_URL = 'amqp://localhost' 
+CELERY_BROKER_URL = 'amqp://localhost'
+
+config = configparser.ConfigParser()
+config.read([os.path.expanduser('~/.fahadConfig')])
+
+# Sending Email Configuration
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
